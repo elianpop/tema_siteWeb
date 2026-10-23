@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Postări — mini frontend</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>Postările mele</h1>
+    <p>Încarcă, adaugă și caută postări.</p>
+  </header>
+
+  <main>
+    <section aria-labelledby="titlu-formular">
+      <h2 id="titlu-formular">Adaugă o postare</h2>
+
+      <form id="post-form">
+        <label for="title">Titlu</label>
+        <input
+          id="title"
+          name="title"
+          type="text"
+          required
+          minlength="3"
+        >
+
+        <label for="body">Conținut</label>
+        <textarea
+          id="body"
+          name="body"
+          rows="4"
+          required
+          minlength="5"
+        ></textarea>
+
+        <label for="userId">ID utilizator</label>
+        <input
+          id="userId"
+          name="userId"
+          type="number"
+          min="1"
+          step="1"
+          value="1"
+          required
+        >
+
+        <button type="submit">Adaugă postarea</button>
+      </form>
+
+      <p id="form-message" aria-live="polite"></p>
+    </section>
+
+    <section aria-labelledby="titlu-lista">
+      <h2 id="titlu-lista">Lista postărilor</h2>
+
+      <label for="search">Caută după titlu</label>
+      <input
+        id="search"
+        name="search"
+        type="search"
+        placeholder="Scrie un cuvânt..."
+      >
+
+      <p id="status" role="status"></p>
+      <ul id="posts-list"></ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>Proiect individual — HTML, CSS și JavaScript</p>
+  </footer>
+</body>
+</html>
